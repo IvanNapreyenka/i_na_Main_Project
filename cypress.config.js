@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
-const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
   e2e: {
     setupNodeEvents(on, config) {
       on('before:browser:launch', (browser = {}, launchOptions) => {
@@ -15,7 +15,7 @@ module.exports = defineConfig({
             return launchOptions
         }
     })
-      allureWriter(on, config); 
+      require('cypress-mochawesome-reporter/plugin')(on);
       return config;
     },
     specPattern: 'cypress/**/*.spec.{js, jsx, ts,tsx}',
