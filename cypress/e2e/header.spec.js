@@ -1,5 +1,6 @@
 const mainPage = require ('../../pages/mainPage');
 const headerComponent = require('../../pages/components/header');
+const citiesComponent = require('../../pages/components/cities');
 
 
 describe('Tests for header view and features', function () {
@@ -32,5 +33,9 @@ describe('Tests for header view and features', function () {
   it('An user are able to navigate to kids-home page via header', () => {
     headerComponent.kidsButton.click();
     cy.url().should('include', 'https://www.lamoda.by/kids-home/');
+  });
+  it('An user are able to navigate to Cities modal via header', () => {
+    headerComponent.cityButton.click();
+    citiesComponent.geoModal.should('be.visible');
   });
 });

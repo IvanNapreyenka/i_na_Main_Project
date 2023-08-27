@@ -51,6 +51,14 @@ class HeaderComponent {
         return cy.get('._root_12pcw_2 > [role="button"]');
     }
 
+    get cityButton() {
+        return cy.get('.js-header-geo-wrapper');
+    }
+
+    get newGeoLocationInTheHeader() {
+        return cy.get('._message_32s20_11');
+    }
+
 }
 
 module.exports = new HeaderComponent();
