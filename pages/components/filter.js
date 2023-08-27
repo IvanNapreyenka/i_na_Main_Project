@@ -59,6 +59,10 @@ get chosenMaterial() {
     return cy.get('._rightColumn_py6ob_4 div:nth-child(2) ._value_pjvgk_44');
 }
 
+get clearFilterButton() {
+    return cy.get(':nth-child(2) >.v-popper .v-popper-target ._icon_pjvgk_70 .icon');
+}
+
 }
 
 module.exports = new FilterComponent();
