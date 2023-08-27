@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
   e2e: {
@@ -13,10 +14,12 @@ module.exports = defineConfig({
             launchOptions.preferences.incognito = true               
             return launchOptions
         }
-    })    
-      return require('./cypress/plugins/index.js')(on, config)
+    })
+      allureWriter(on, config); 
+      return config;
     },
     specPattern: 'cypress/**/*.spec.{js, jsx, ts,tsx}',
+    include: ["./node_modules/cypress", "cypress/**/*.js"]
   },
   viewportWidth: 1920,
   viewportHeight: 1080
