@@ -1,5 +1,5 @@
 const Ajv = require('ajv');
-const postSetTagsSchema = require('../data/postSetTagsSchema.v1.json')
+const postSetTagsSchema = require('../data/postSetTagsSchema.v1.json');
 const ajv = new Ajv();
 
 describe('Tests for POST Set Tags Request', () => {

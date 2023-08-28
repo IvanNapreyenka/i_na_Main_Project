@@ -1,5 +1,5 @@
 const Ajv = require('ajv');
-const postBannerSchema = require('../data/postBannerSchema.v1.json')
+const postBannerSchema = require('../data/postBannerSchema.v1.json');
 const ajv = new Ajv();
 
 describe('Tests for POST Request', () => {
@@ -35,67 +35,3 @@ describe('Tests for POST Request', () => {
     expect(result).to.be.true;
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const Ajv = require('ajv');
-// const postBannerSchema = require('../data/postBannerSchema.v1.json')
-// const ajv = new Ajv();
-
-// describe('Tests for POST Request', () => {
-
-//   it('POST request returns status code = 200', () => {
-    
-//     cy.request({
-//         method: 'POST',
-//         url: 'https://www.lamoda.by/api/v1/banner/get',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: {
-//           "slot_id": "js_header_usp2",
-//           "category_id": "",
-//           "brand_group": "",
-//           "display_locations": "",
-//           "is_new": 0,
-//           "is_sale": 0,
-//           "user_status": ""
-//           }
-//       }).then((response) => {expect(response.status).to.eq(200);})
-//     });
-//   it('POST request returns correct JSON schema', () => {
-  
-//     cy.request({
-//         method: 'POST',
-//         url: 'https://www.lamoda.by/api/v1/banner/get',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: {
-//           "slot_id": "js_header_usp2",
-//           "category_id": "",
-//           "brand_group": "",
-//           "display_locations": "",
-//           "is_new": 0,
-//           "is_sale": 0,
-//           "user_status": ""
-//           }
-//       }).then((response) => {const 
-//           result = ajv.validate(postBannerSchema, response.body);
-//           expect(result).to.be.true;})
-//     });
-// });
