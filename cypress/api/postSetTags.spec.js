@@ -31,11 +31,9 @@ describe('Tests for POST Set Tags Request', () => {
       response = res;
     });
   });
-
   it('POST request returns status code = 200', () => {
     expect(response.status).to.eq(200);
   });
-
   it('POST request returns correct JSON schema', () => {
     const result = ajv.validate(postSetTagsSchema, response.body);
     expect(result).to.be.true;

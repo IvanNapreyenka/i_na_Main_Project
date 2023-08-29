@@ -15,12 +15,25 @@ class LoginComponent {
         return cy.get('._footer_3a8g7_36 .x-button');
     }
 
-    get enterPasswordFieldNotActive() {
+    get notActivePasswordField() {
         return cy.get('._content_1086m_10 div:nth-child(3) .input-material__placeholder.input-material__placeholder');
     }
 
     get loginCaptha() {
         return cy.get('.x-recaptcha-challenge');
+    }
+
+    enterEmailIntoNumberOrEmailField(searchText) {
+        this.numberOrEmailField.type(searchText);
+    }
+
+    activateNotActivePasswordField(searchText) {
+        this.numberOrEmailField.type(searchText);
+    }
+
+    enterPassword(searchText) {
+        this.notActivePasswordField.click();
+        this.passwordField.type(searchText);
     }
 
 }

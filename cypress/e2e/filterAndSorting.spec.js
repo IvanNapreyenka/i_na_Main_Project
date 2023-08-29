@@ -1,5 +1,6 @@
 const mainPage = require ('../../pages/mainPage');
-const filterComponent = require ('../../pages/components/filter')
+const filterComponent = require ('../../pages/components/filter');
+
 
 describe('Tests for filter and sorting features', function () {
   beforeEach(() => {

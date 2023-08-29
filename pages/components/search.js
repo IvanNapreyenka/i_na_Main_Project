@@ -22,7 +22,7 @@ class SearchComponent {
         return cy.get('._list_z9ur1_36 div:nth-child(2)');
     }
 
-    enteringTextInField(searchText) {
+    enterTextInSearchField(searchText) {
         this.searchField.type(searchText);
     }
 

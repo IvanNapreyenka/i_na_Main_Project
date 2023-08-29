@@ -8,18 +8,13 @@ describe('Tests for cities feature', function () {
     mainPage.navigate('https://www.lamoda.by');
   });
   it('An user are able to choose city from the list', () => {
-    headerComponent.cityButton.click();
-    citiesComponent.minskCity.click();
+    citiesComponent.choseCityViaOpenList();
     citiesComponent.geoLocationTitle.should('contain.text', 'г. Минск');
-    citiesComponent.geoLocationModalCloseSymbol.click();
     headerComponent.newGeoLocationInTheHeader.should('contain.text', 'г. Минск');
   });
   it('An user are able to find chose a city on Geo Modal', () => {
-    headerComponent.cityButton.click();
-    citiesComponent.citySearchField.type('Орша');
-    citiesComponent.dropDownCityOrsha.click();
+    citiesComponent.choseCityViaSearch('Орша');
     citiesComponent.geoLocationTitle.should('contain.text', 'г. Орша');
-    citiesComponent.geoLocationModalCloseSymbol.click();
     headerComponent.newGeoLocationInTheHeader.should('contain.text', 'г. Орша');
   });
 });

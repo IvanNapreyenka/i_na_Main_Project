@@ -2,7 +2,7 @@ const Ajv = require('ajv');
 const postBannerSchema = require('../data/postBannerSchema.v1.json');
 const ajv = new Ajv();
 
-describe('Tests for POST Request', () => {
+describe('Tests for POST Banner API', () => {
   let response;
 
   before(() => {
@@ -25,11 +25,9 @@ describe('Tests for POST Request', () => {
       response = res;
     });
   });
-
   it('POST Banner API request returns status code = 200', () => {
     expect(response.status).to.eq(200);
   });
-
   it('POST Banner API request returns correct JSON schema', () => {
     const result = ajv.validate(postBannerSchema, response.body);
     expect(result).to.be.true;

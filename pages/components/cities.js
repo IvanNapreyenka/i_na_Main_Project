@@ -1,3 +1,5 @@
+const headerComponent = require('../../pages/components/header');
+
 class CitiesComponent {
     
     get geoModal() {
@@ -24,6 +26,20 @@ class CitiesComponent {
         return cy.xpath('//*[@class="notranslate"]//*[.="г. Орша"]');
     }
 
+    get dropDownCityFirstElement() {
+        return cy.get('div._dropdown_104fn_7 > div:first-child');
+    }
+
+    choseCityViaOpenList() {
+        headerComponent.cityButton.click();
+        this.minskCity.click();
+    }
+
+    choseCityViaSearch(searchCity) {
+        headerComponent.cityButton.click();
+        this.citySearchField.type(searchCity);
+        this.dropDownCityFirstElement.click();
+    }
 
 }
 

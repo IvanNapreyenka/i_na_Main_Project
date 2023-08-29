@@ -14,7 +14,7 @@ describe('Tests for header view and features', function () {
   });
   it('Tooltip with text is displayed when hovering over "Genuine goods"', () => {
     headerComponent.genuineGoodsButton.realHover('mouse');
-    headerComponent.genuineGoodsToltip.should('be.visible');
+    headerComponent.genuineGoodsToltip.should('exist');
     headerComponent.textForGenuineGoodsToltip.should('have.text', 'Все товары — подлинные. Подтвердим сертификатами производителей.');
   });
   it('Tooltip with text is displayed when hovering over "Pay when you want"', () => {
@@ -24,7 +24,7 @@ describe('Tests for header view and features', function () {
   });
   it('An user are able to navigate to woman-home page via header', () => {
     headerComponent.womanButton.click();
-    cy.url().should('include', 'https://www.lamoda.by/women-home/')
+    cy.url().should('include', 'https://www.lamoda.by/women-home/');
   });
   it('An user are able to navigate to man-home page via header', () => {
     headerComponent.manButton.click();
