@@ -8,7 +8,8 @@ describe('Tests for cities feature', function () {
     mainPage.navigate('https://www.lamoda.by');
   });
   it('An user are able to choose city from the list', () => {
-    citiesComponent.choseCityViaOpenList();
+    headerComponent.cityButton.click();
+    citiesComponent.choseCityViaOpenList(citiesComponent.minskCity);
     citiesComponent.geoLocationTitle.should('contain.text', 'г. Минск');
     headerComponent.newGeoLocationInTheHeader.should('contain.text', 'г. Минск');
   });

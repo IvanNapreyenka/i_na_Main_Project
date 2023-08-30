@@ -30,9 +30,8 @@ class CitiesComponent {
         return cy.get('div._dropdown_104fn_7 > div:first-child');
     }
 
-    choseCityViaOpenList() {
-        headerComponent.cityButton.click();
-        this.minskCity.click();
+    choseCityViaOpenList(city) {
+        city.click();
     }
 
     choseCityViaSearch(searchCity) {

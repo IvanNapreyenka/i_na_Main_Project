@@ -22,16 +22,14 @@ describe('Tests for filter and sorting features', function () {
   });
   it('An user are able to see by chosen material', () => {
     filterComponent.materialsFilter.click();
-    filterComponent.checkboxWool.click();
-    filterComponent.applyMaterialButton.click();
+    filterComponent.choseFilterElement(filterComponent.checkboxWool, filterComponent.applyMaterialButton);
     filterComponent.chosenMaterial.should('have.text', 'Шерсть');
   });
   it('Material button is changed view after clearing Material filter', () => {
     filterComponent.materialsFilter.click();
-    filterComponent.checkboxWool.click();
-    filterComponent.applyMaterialButton.click();
-    filterComponent.clearFilterButton.click();
-    filterComponent.clearFilterButton.should('not.be.enabled');
+    filterComponent.choseFilterElement(filterComponent.checkboxWool, filterComponent.applyMaterialButton);
+    filterComponent.clearFilter(filterComponent.clearMaterialFilterButton);
+    filterComponent.clearMaterialFilterButton.should('not.be.enabled');
     filterComponent.chosenMaterial.should('not.exist');
   });
 });

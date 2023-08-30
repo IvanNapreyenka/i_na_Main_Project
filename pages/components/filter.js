@@ -48,7 +48,7 @@ get onlyLamodaGoodsFilter() {
 }
 
 get checkboxWool() {
-    return cy.get('div:nth-child(27) ._content_1xdyy_51');
+    return cy.xpath('//*[.="Шерсть"]');
 }
 
 get applyMaterialButton() {
@@ -59,8 +59,17 @@ get chosenMaterial() {
     return cy.get('._rightColumn_py6ob_4 div:nth-child(2) ._value_pjvgk_44');
 }
 
-get clearFilterButton() {
+get clearMaterialFilterButton() {
     return cy.get(':nth-child(2) >.v-popper .v-popper-target ._icon_pjvgk_70 .icon');
+}
+
+clearFilter(cancelFilreButton) {
+    cancelFilreButton.click();
+}
+
+choseFilterElement(filterElement, applyButton) {
+    filterElement.click();
+    applyButton.click();
 }
 
 }
