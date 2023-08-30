@@ -27,15 +27,6 @@ class LoginComponent {
         return cy.get('._message_11do5_46');
     }
 
-    enterEmailIntoNumberOrEmailField(email) {
-        this.numberOrEmailField.type(email);
-    }
-
-    enterPassword(searchText) {
-        this.notActivePasswordField.click();
-        this.passwordField.type(searchText);
-    }
-
     loginWithEmail(email, password) {
         this.numberOrEmailField.type(email);
         this.notActivePasswordField.click();
