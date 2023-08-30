@@ -59,6 +59,10 @@ class HeaderComponent {
         return cy.get('._message_32s20_11');
     }
 
+    navigateToPagesViaHeader(button) {
+        button.click();
+    }
+
 }
 
 module.exports = new HeaderComponent();

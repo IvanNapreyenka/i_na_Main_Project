@@ -23,19 +23,19 @@ describe('Tests for header view and features', function () {
     headerComponent.textForpayWhenYouWantToltip.should('have.text', 'Lamoda предлагает 3 варианта оплаты заказа: онлайн-оплата на сайте и в приложении Lamoda при оформлении заказа; оплата при получении заказа; а также оплата в рассрочку.');
   });
   it('An user are able to navigate to woman-home page via header', () => {
-    headerComponent.womanButton.click();
+    headerComponent.navigateToPagesViaHeader(headerComponent.womanButton);
     cy.url().should('include', 'https://www.lamoda.by/women-home/');
   });
   it('An user are able to navigate to man-home page via header', () => {
-    headerComponent.manButton.click();
+    headerComponent.navigateToPagesViaHeader(headerComponent.manButton);
     cy.url().should('include', 'www.lamoda.by/men-home/');
   });
   it('An user are able to navigate to kids-home page via header', () => {
-    headerComponent.kidsButton.click();
+    headerComponent.navigateToPagesViaHeader(headerComponent.kidsButton);
     cy.url().should('include', 'https://www.lamoda.by/kids-home/');
   });
   it('An user are able to navigate to Cities modal via header', () => {
-    headerComponent.cityButton.click();
+    headerComponent.navigateToPagesViaHeader(headerComponent.cityButton);
     citiesComponent.geoModal.should('be.visible');
   });
 });

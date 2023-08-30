@@ -63,8 +63,8 @@ get clearMaterialFilterButton() {
     return cy.get(':nth-child(2) >.v-popper .v-popper-target ._icon_pjvgk_70 .icon');
 }
 
-clearFilter(cancelFilreButton) {
-    cancelFilreButton.click();
+clearFilter(cancelFilterButton) {
+    cancelFilterButton.click();
 }
 
 choseFilterElement(filterElement, applyButton) {
