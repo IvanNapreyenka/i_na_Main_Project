@@ -27,7 +27,7 @@ get detailsFilter() {
     return cy.xpath('//*[.="Детали"]');
 }
 
-get helpingЕhePlanetFilter() {
+get helpingThePlanetFilter() {
     return cy.xpath('//*[.="Помогаю планете"]');
 }
 
@@ -61,6 +61,10 @@ get chosenMaterial() {
 
 get clearMaterialFilterButton() {
     return cy.get(':nth-child(2) >.v-popper .v-popper-target ._icon_pjvgk_70 .icon');
+}
+
+openFilter(filter) {
+    filter.click();
 }
 
 clearFilter(cancelFilterButton) {

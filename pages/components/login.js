@@ -23,17 +23,24 @@ class LoginComponent {
         return cy.get('.x-recaptcha-challenge');
     }
 
-    enterEmailIntoNumberOrEmailField(searchText) {
-        this.numberOrEmailField.type(searchText);
+    get loginsSnackbar() {
+        return cy.get('._message_11do5_46');
     }
 
-    activateNotActivePasswordField(searchText) {
-        this.numberOrEmailField.type(searchText);
+    enterEmailIntoNumberOrEmailField(email) {
+        this.numberOrEmailField.type(email);
     }
 
     enterPassword(searchText) {
         this.notActivePasswordField.click();
         this.passwordField.type(searchText);
+    }
+
+    loginWithEmail(email, password) {
+        this.numberOrEmailField.type(email);
+        this.notActivePasswordField.click();
+        this.passwordField.type(password);
+        this.loginModalButton.click();    
     }
 
 }

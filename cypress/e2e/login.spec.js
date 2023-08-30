@@ -7,11 +7,10 @@ describe('Tests for Login feature', function () {
   beforeEach(() => {
     mainPage.navigate('https://www.lamoda.by');
   });
-  it('Login is protected by captha', () => {
-    headerComponent.loginButton.click();
-    loginComponent.enterEmailIntoNumberOrEmailField('vany@yopmail.com');
-    loginComponent.enterPassword('Test123_123');
-    loginComponent.loginModalButton.click();
-    loginComponent.loginCaptha.should('be.visible');
+  it('"Неверный логин или пароль." is displayed when an user tries to login with incorrect password', () => {
+    headerComponent.navigateToPagesViaHeader(headerComponent.loginButton);
+    loginComponent.loginWithEmail('vany@yopmail.com', 'Test123_123');
+    loginComponent.loginsSnackbar.should('be.visible');
+    loginComponent.loginsSnackbar.should('have.text', 'Неверный логин или пароль.');
   });
 });
